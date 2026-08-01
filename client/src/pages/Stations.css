@@ -1,0 +1,240 @@
+.stations-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.stations-header h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin: 0 0 0.5rem 0;
+}
+
+.stations-header p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.stations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.station-card {
+  background-color: var(--bg-white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.station-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 102, 204, 0.15);
+  border-top: 4px solid var(--primary-color);
+}
+
+.station-icon {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.station-card h3 {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.station-location {
+  color: var(--text-light);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.station-announcements {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: var(--bg-light);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.station-announcements strong {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+.station-announcements span {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.btn-secondary:hover {
+  background-color: #006064;
+  transform: translateY(-2px);
+}
+
+.empty-state,
+.error-state {
+  text-align: center;
+  padding: 3rem;
+  background-color: var(--bg-white);
+  border-radius: 12px;
+  border: 2px dashed var(--border-color);
+}
+
+.empty-state p,
+.error-state p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+/* Station Detail Styles */
+.btn-back {
+  background: none;
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.btn-back:hover {
+  color: var(--primary-dark);
+}
+
+.station-detail {
+  background-color: var(--bg-white);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.detail-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.detail-icon {
+  font-size: 4rem;
+  flex-shrink: 0;
+}
+
+.detail-header h1 {
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin: 0 0 0.5rem 0;
+}
+
+.detail-location {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.announcements-section h2 {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin: 0 0 1.5rem 0;
+}
+
+.announcements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.announcement-item {
+  background-color: #fffacd;
+  border-left: 4px solid var(--warning-color);
+  padding: 1rem;
+  border-radius: 6px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.announcement-message {
+  color: var(--text-dark);
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.announcement-time {
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+.empty-announcements {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--bg-light);
+  border-radius: 6px;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .stations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stations-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .detail-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .detail-icon {
+    font-size: 3rem;
+  }
+
+  .detail-header h1 {
+    font-size: 1.5rem;
+  }
+}
