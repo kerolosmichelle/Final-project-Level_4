@@ -22,9 +22,11 @@ app.use(express.json());
 // Serve static files (HTML, CSS, JS) from public folder
 app.use(express.static(path.join(__dirname, "public")));
 
-// TODO: Set up authentication routes (login, etc.)
+// Set up authentication routes (login, register)
+app.use("/api/auth", authRoutes);
 
-// TODO: Set up station routes (get stations, announcements, etc.)
+// Set up station routes (get stations, announcements, etc.)
+app.use("/api/stations", stationRoutes);
 
 // Health check endpoint to test if server is running
 app.get("/health", (req, res) => {
