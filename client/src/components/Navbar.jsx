@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import './Navbar.css'
 
 export default function Navbar({ user, onLogout }) {
@@ -16,8 +16,8 @@ export default function Navbar({ user, onLogout }) {
           <h1 className="logo">🚇 MetroSync Live</h1>
         </div>
         <ul className="navbar-links">
-          <li><a href="/stations" className="nav-link">Stations</a></li>
-          {user?.role === 'admin' && <li><a href="/admin" className="nav-link">Admin</a></li>}
+          <li><Link to="/stations" className="nav-link">Stations</Link></li>
+          {user?.role === 'admin' && <li><Link to="/admin" className="nav-link">Admin</Link></li>}
           <li className="user-info">
             <span>{user?.email}</span>
             <button className="btn-logout" onClick={handleLogout}>Logout</button>
