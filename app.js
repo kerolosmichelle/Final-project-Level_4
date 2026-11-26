@@ -19,8 +19,9 @@ app.use(cors());
 // Parse incoming JSON data in request bodies
 app.use(express.json());
 
-// Serve static files (HTML, CSS, JS) from public folder
-app.use(express.static(path.join(__dirname, "public")));
+// Serve the built React app (run "npm run build" first)
+const clientDist = path.join(__dirname, "client", "dist");
+app.use(express.static(clientDist));
 
 // Set up authentication routes (login, register)
 app.use("/api/auth", authRoutes);
@@ -31,6 +32,11 @@ app.use("/api/stations", stationRoutes);
 // Health check endpoint to test if server is running
 app.get("/health", (req, res) => {
   res.json({ status: "ok" });
+});
+
+// Any other page: send the React app so the router can handle it
+app.get("*", (req, res) => {
+  res.sendFile(path.join(clientDist, "index.html"));
 });
 
 // Error handler - catches any errors and sends response

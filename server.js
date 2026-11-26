@@ -1,3 +1,6 @@
+// Load the values from the .env file before anything else
+import "dotenv/config";
+
 // Import packages we need
 import http from "http";
 import { Server } from "socket.io";
